@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block titulo %}Resultado - USDA{% endblock %}
+
+{% block cuerpo %}
+
+<h3 class="mb-4 text-center">Resultados para "{{ nombre }}"</h3>
+
+{% if error %}
+    <div class="alert alert-danger text-center">
+        {{ error }}
+    </div>
+{% else %}
+    <div class="card shadow-sm p-4">
+        <h4>Información Nutricional:</h4>
+
+        <ul class="list-group my-3">
+            <li class="list-group-item"><strong>Calorías:</strong> {{ calorias }} kcal</li>
+            <li class="list-group-item"><strong>Proteína:</strong> {{ proteina }} g</li>
+            <li class="list-group-item"><strong>Carbohidratos:</strong> {{ carbohidratos }} g</li>
+            <li class="list-group-item"><strong>Grasas:</strong> {{ grasa }} g</li>
+        </ul>
+
+        <h4 class="mt-4">Clasificación principal:</h4>
+
+        <div class="alert alert-info fs-5 text-center">
+            {{ clasificacion }}
+        </div>
+
+        <a href="/" class="btn btn-secondary w-100 mt-3">Buscar otro alimento</a>
+    </div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block titulo %}Clasificar alimento - USDA{% endblock %}
+
+{% block cuerpo %}
+
+<h3 class="mb-4 text-center text-success">Buscar información  (USDA)</h3>
+
+<form action="/resultado" method="POST" class="card p-4 shadow-sm mx-auto border border-success" style="max-width: 500px;">
+    <div class="mb-3">
+        <label class="form-label">Ingresa un alimento</label>
+        <input type="text" name="alimento" class="form-control" placeholder="Ejemplo: manzana, arroz, pollo…" required>
+    </div>
+
+   
+    <button class="btn btn-success w-100">Buscar</button>
+</form>
+
+{% endblock %}
